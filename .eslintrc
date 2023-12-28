@@ -1,7 +1,9 @@
 {
-	"env": {
-		"node": true
-	},
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
 
 	"rules": {
 		"brace-style": [2, "1tbs"],
@@ -24,7 +26,7 @@
 		"no-underscore-dangle": 0,
 		"quotes": [2, "single"],
 		"radix": 2,
-		"space-after-keywords": [2, "always"],
+		"keyword-spacing":[2, {"before":true, "after":true}],
 		"valid-jsdoc": [2, {
 			"prefer": {
 				"return": "returns"
@@ -33,7 +35,7 @@
 		"wrap-iife": 2,
 		"yoda": [0, "always"]
 	},
-
+	
 	"globals": {
 		"console": false,
 		"Promise": true
