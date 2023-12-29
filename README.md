@@ -121,3 +121,24 @@ fs.src('files/*.jpg')
 [getObject]: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getObject-property
 [putObject]: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
 [upload]: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#upload-property
+
+
+### Node-RED ###
+[Node-RED](https://nodered.org/) is a low-code, visual programming environment for event-driven applications. vinyl-s3 is available there as part of the [gulp-etl](http://gulpetl.com) project; to install it to Node-RED under Manage Palette search for `vinyl-s3`
+
+#### Demo flow ####
+
+![Demo flow](./resources/demoflow.png)
+
+
+Copy this flow for import in Node-RED under `Import`:
+
+``` json
+[{"id":"ea8a01833caca064","type":"inject","z":"900570325b249093","name":"click to start","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"",
+"payload":"","payloadType":"date","x":850,"y":40,"wires":[["581a22165aef5763"]]},{"id":"34e02d4be11bc045","type":"gulp.dest","z":"900570325b249093","name":"","path":"data","x":1210,"y":160,"wires":[["9d4b2a68ebec230e"]]},
+{"id":"9d4b2a68ebec230e","type":"debug","z":"900570325b249093","name":"debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto",
+"x":1290,"y":80,"wires":[]},{"id":"f03409d378908dad","type":"s3.src","z":"900570325b249093","name":"","path":"s3://my-bucket/prefix/*.jpg","x":970,"y":160,"wires":[["34e02d4be11bc045"]]},{"id":"e3f3197743972a9b","type":"comment",
+"z":"900570325b249093","name":"Download files from S3","info":"","x":1100,"y":60,"wires":[]},{"id":"581a22165aef5763","type":"template","z":"900570325b249093","name":"Set config","field":"config","fieldType":"msg",
+"format":"json","syntax":"plain","template":"{\n    \"buffer\": false,\n    \"s3\": {\n        \"accessKeyId\": \"AWS_ACCESS_ID\",\n        \"secretAccessKey\": \"AWS_ACCESS_KEY\",\n        \"region\": \"us-west-2\"\n    }\n}",
+"output":"json","x":880,"y":100,"wires":[["f03409d378908dad"]]}]
+```

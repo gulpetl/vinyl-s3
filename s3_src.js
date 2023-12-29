@@ -1,4 +1,5 @@
 const s3 = require('./lib/s3');
+const AWS = require('aws-sdk');
 
 module.exports = function setupS3SrcNode (RED) {
 	function S3SrcNode(config) {
@@ -10,8 +11,9 @@ module.exports = function setupS3SrcNode (RED) {
 		// console.log('config', config)
 
 		node.on('input', function handleInput(msg, send) {
-			var configObj = { buffer: false, ...msg.config } // default to streaming mode
-			// msg = RED.util.cloneMessage(msg);
+			let configObj = { buffer:false, ...msg.config } // default to streaming mode
+			if (msg?.config?.s3)
+				configObj.s3 = new AWS.S3(msg.config.s3);
 
 			/** 
 			 * plugins will be an array of objects where obj.init is a function that returns a stream. This clones well for
