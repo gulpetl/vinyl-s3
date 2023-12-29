@@ -1,6 +1,6 @@
-# vinyl-s3
+# @gulpetl/vinyl-s3
 
-Use S3 as a source or destination of vinyl files.
+Use S3 as a source or destination of vinyl files. Forked from [vinyl-s3](https://github.com/izaakschroeder/vinyl-s3) to add support for Node-RED as part of the [gulpetl](https://gulpetl.com/) project
 
 ![build status](http://img.shields.io/travis/izaakschroeder/vinyl-s3/master.svg?style=flat)
 ![coverage](http://img.shields.io/coveralls/izaakschroeder/vinyl-s3/master.svg?style=flat)

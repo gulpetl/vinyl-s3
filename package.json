@@ -1,19 +1,24 @@
 {
-	"name": "vinyl-s3",
-	"version": "0.3.1",
+	"name": "@gulpetl/vinyl-s3",
+	"version": "0.3.2",
 	"description": "Use S3 as a source or destination of vinyl files.",
-	"author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
+	"author": "peterl@sbcotton.com",
 	"keywords": [
 		"s3",
 		"vinyl",
 		"gulp",
-		"gulpfriendly"
+		"gulpfriendly",
+		"gulp-etl",
+		"gulpetl",
+		"etl",
+		"data",
+		"node-red"
 	],
 	"license": "CC0-1.0",
-	"homepage": "https://github.com/izaakschroeder/vinyl-s3",
+	"homepage": "https://docs.gulpetl.com",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/izaakschroeder/vinyl-s3.git"
+		"url": "https://github.com/gulpetl"
 	},
 	"main": "lib/s3.js",
 	"scripts": {
@@ -22,11 +27,15 @@
 		"lint": "eslint --ignore-path .gitignore .",
 		"coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100"
 	},
-	"node-red": {
+	"node-red": {		
+		"version": ">=2.0.0",
 		"nodes": {
 			"s3.src": "s3_src.js",
 			"s3.dest": "s3_dest.js"
 		}
+	},
+	"engines": {
+		"node": ">=12.0.0"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.1526.0",
