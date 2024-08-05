@@ -1,6 +1,6 @@
 {
 	"name": "@gulpetl/vinyl-s3",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"description": "Use S3 as a source or destination of vinyl files.",
 	"author": "peterl@sbcotton.com",
 	"keywords": [
