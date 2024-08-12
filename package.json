@@ -1,6 +1,6 @@
 {
 	"name": "@gulpetl/vinyl-s3",
-	"version": "0.3.3",
+	"version": "0.4.0",
 	"description": "Use S3 as a source or destination of vinyl files.",
 	"author": "peterl@sbcotton.com",
 	"keywords": [
@@ -27,7 +27,7 @@
 		"lint": "eslint --ignore-path .gitignore .",
 		"coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100"
 	},
-	"node-red": {		
+	"node-red": {
 		"version": ">=2.0.0",
 		"nodes": {
 			"s3.src": "s3_src.js",
@@ -44,6 +44,7 @@
 		"s3-glob": "^0.2.0",
 		"s3-streams": "^0.2.0",
 		"s3-url": "^0.2.2",
+		"stream-combiner": "^0.2.2",
 		"through2": "^2.0.0",
 		"through2-map": "^1.4.0",
 		"vinyl": "^0.5.0"
