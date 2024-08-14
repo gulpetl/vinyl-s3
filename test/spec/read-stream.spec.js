@@ -2,7 +2,7 @@
 'use strict';
 
 var through2 = require('through2'),
-	S3S = require('s3-streams'),
+	S3S = require('@gulpetl/s3-streams'),
 	createReadStream = require('read-stream');
 
 describe('#createReadStream', function() {
